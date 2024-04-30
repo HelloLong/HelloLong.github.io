@@ -103,6 +103,6 @@ theme: pure
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/HelloLong/HelloLong.github.io
+  repo: git@github.com:HelloLong/HelloLong.github.io.git
   branch: master
   # token: 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
