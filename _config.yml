@@ -104,5 +104,5 @@ theme: pure
 deploy:
   type: git
   repo: https://github.com/HelloLong/HelloLong.github.io
-  branch: gh-pages
-  token: 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
+  branch: master
+  # token: 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
