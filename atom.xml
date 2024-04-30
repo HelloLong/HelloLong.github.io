@@ -6,7 +6,7 @@
   <link href="https://xulonghua.com/atom.xml" rel="self"/>
   
   <link href="https://xulonghua.com/"/>
-  <updated>2023-11-23T08:36:20.729Z</updated>
+  <updated>2024-04-30T12:00:50.513Z</updated>
   <id>https://xulonghua.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test3</title>
+    <link href="https://xulonghua.com/2024/04/30/test3/"/>
+    <id>https://xulonghua.com/2024/04/30/test3/</id>
+    <published>2024-04-30T11:56:19.000Z</published>
+    <updated>2024-04-30T12:00:50.513Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is test3 test page</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This is test3 test page&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World deploy by hexo</title>
@@ -41,15 +62,14 @@
     <link href="https://xulonghua.com/2023/11/23/test2/"/>
     <id>https://xulonghua.com/2023/11/23/test2/</id>
     <published>2023-11-23T09:29:03.000Z</published>
-    <updated>2024-04-30T08:17:43.845Z</updated>
+    <updated>2024-04-30T10:01:01.598Z</updated>
     
-    <content type="html"><![CDATA[<p>This is a testing article tooo test  test again<br>hi test test2<br>hi test test3<br>hi test test4<br>hi test test5<br>hi test test6</p>]]></content>
+    <content type="html"><![CDATA[<p>This is a testing article tooo test  test again<br>hi test test2<br>hi test test3<br>hi test test4<br>hi test test5<br>hi test test6<br>hi test test7</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;This is a testing article tooo test  test again&lt;br&gt;hi test test2&lt;br&gt;hi test test3&lt;br&gt;hi test test4&lt;br&gt;hi test test5&lt;br&gt;hi test test6&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;p&gt;This is a testing article tooo test  test again&lt;br&gt;hi test test2&lt;br&gt;hi test test3&lt;br&gt;hi test test4&lt;br&gt;hi test test5&lt;br&gt;hi test test6&lt;br&gt;h</summary>
       
     
     
