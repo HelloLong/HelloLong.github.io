@@ -6,7 +6,7 @@
   <link href="https://xulonghua.com/atom.xml" rel="self"/>
   
   <link href="https://xulonghua.com/"/>
-  <updated>2023-11-23T08:36:20.729Z</updated>
+  <updated>2024-04-30T13:50:20.610Z</updated>
   <id>https://xulonghua.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test00</title>
+    <link href="https://xulonghua.com/2024/04/30/test00/"/>
+    <id>https://xulonghua.com/2024/04/30/test00/</id>
+    <published>2024-04-30T13:50:20.000Z</published>
+    <updated>2024-04-30T13:50:20.610Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World deploy by hexo</title>
@@ -33,31 +46,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://xulonghua.com/2023/11/23/test/"/>
-    <id>https://xulonghua.com/2023/11/23/test/</id>
-    <published>2023-11-23T09:28:02.000Z</published>
-    <updated>2023-11-23T09:30:10.686Z</updated>
-    
-    <content type="html"><![CDATA[<p>This is a testing article</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;This is a testing article&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-    <category term="original write" scheme="https://xulonghua.com/tags/original-write/"/>
-    
-    <category term="java" scheme="https://xulonghua.com/tags/java/"/>
     
   </entry>
   
