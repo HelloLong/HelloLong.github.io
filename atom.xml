@@ -6,7 +6,7 @@
   <link href="https://xulonghua.com/atom.xml" rel="self"/>
   
   <link href="https://xulonghua.com/"/>
-  <updated>2024-04-30T14:28:11.763Z</updated>
+  <updated>2024-04-30T14:47:08.565Z</updated>
   <id>https://xulonghua.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Share some pitfalls I encountered when deploying Hexo in githubpages</title>
+    <link href="https://xulonghua.com/2024/04/30/Share-some-pitfalls-I-encountered-when-deploying-Hexo-in-githubpages/"/>
+    <id>https://xulonghua.com/2024/04/30/Share-some-pitfalls-I-encountered-when-deploying-Hexo-in-githubpages/</id>
+    <published>2024-04-30T14:45:44.000Z</published>
+    <updated>2024-04-30T14:47:08.565Z</updated>
+    
+    <content type="html"><![CDATA[<p>Firstly, we should use the right work flows. </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Firstly, we should use the right work flows. &lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>test00</title>
