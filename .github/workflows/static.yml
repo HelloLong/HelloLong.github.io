@@ -3,10 +3,8 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
+  push | commit:
     branches: ["master"]
-  commit:
-    branches: ["master"]  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
