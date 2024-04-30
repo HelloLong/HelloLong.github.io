@@ -4,7 +4,7 @@
   <url>
     <loc>https://xulonghua.com/2023/11/23/test2/</loc>
     
-    <lastmod>2023-11-23</lastmod>
+    <lastmod>2024-04-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
 
   <url>
     <loc>https://xulonghua.com/</loc>
-    <lastmod>2023-11-26</lastmod>
+    <lastmod>2024-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,14 +39,14 @@
   
   <url>
     <loc>https://xulonghua.com/tags/original-write/</loc>
-    <lastmod>2023-11-26</lastmod>
+    <lastmod>2024-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xulonghua.com/tags/java/</loc>
-    <lastmod>2023-11-26</lastmod>
+    <lastmod>2024-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
