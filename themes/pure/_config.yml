@@ -146,7 +146,7 @@ comment:
     notify: false # mail notifier , https://github.com/xCss/Valine/wiki
     verify: true # Verification code
     placeholder: feel free test # comment box placeholder
-    avatar: mm # gravatar style
+    avatar: '' # gravatar style
     meta: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
     visitor: true # Article reading statistic https://valine.js.org/visitor.html
