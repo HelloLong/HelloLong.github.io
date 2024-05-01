@@ -141,11 +141,11 @@ comment:
     language: zh-CN
     
   valine: # Valine. https://valine.js.org
-    appid: fun3jzTSvtQqL9ow5jdjDT1v-MdYXbMMI  # your leancloud application appid
-    appkey: 95Fd6eGDtLOhOZcba1GwE9m0 # your leancloud application appkey
+    appid: xJqwvCmNRmtDojJGm7bQZHci-gzGzoHsz  # your leancloud application appid
+    appkey: Bbo7KbWLb7z9GgnV1Jb5QmKa # your leancloud application appkey
     notify: false # mail notifier , https://github.com/xCss/Valine/wiki
     verify: true # Verification code
-    placeholder: feel free # comment box placeholder
+    placeholder: feel free test # comment box placeholder
     avatar: mm # gravatar style
     meta: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
