@@ -42,7 +42,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: .
+      url: https://xulonghua.com/
       # url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
