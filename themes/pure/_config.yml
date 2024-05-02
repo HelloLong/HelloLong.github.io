@@ -2,11 +2,11 @@
 menu:
   Home: .
   Archives: archives  # 归档
-  # Categories: categories  # 分类
-  # Tags: tags  # 标签
-  # Repository: repository  # github repositories
+  Categories: categories  # 分类
+  Tags: tags  # 标签
+  Repository: repository  # github repositories
   # Books: books  # 豆瓣书单
-  # Links: links  # 友链
+  Links: links  # 友链
   About: about  # 关于
 
 # Enable/Disable menu icons
@@ -61,18 +61,18 @@ pagination:
 # Sidebar
 sidebar: right
 widgets:
-  # - board  
+  - board  
   - category
   - tag
-  # - tagcloud
-  # - archive
+  - tagcloud
+  - archive
   - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
-# - category
-# - tagcloud
-# - archive  
+ - category
+ - tagcloud
+ - archive  
 
 # widget behavior
 archive_type: 'monthly'
@@ -88,14 +88,14 @@ search:
 
 # Donate
 donate:
-  enable: false
+  enable: true
   # 微信打赏
   wechatpay:
-    qrcode: images/donate/wechatpayimg.png
+    qrcode: images/donate/wechat.png
     title: 微信支付
   # 支付宝打赏
   alipay: 
-    qrcode: images/donate/alipayimg.png 
+    qrcode: images/donate/alipay.png 
     title: 支付宝
 
 # Share
@@ -113,7 +113,7 @@ share:
 # 项目仓库信息（将会覆盖 github 项）
 repository:
   platform: github # 托管平台（github | gitee）
-  username: cofess # 用户名
+  username: HelloLong # 用户名
 
 # Comment
 # Gitment
@@ -143,10 +143,10 @@ comment:
   valine: # Valine. https://valine.js.org
     appid: xJqwvCmNRmtDojJGm7bQZHci-gzGzoHsz  # your leancloud application appid
     appkey: Bbo7KbWLb7z9GgnV1Jb5QmKa # your leancloud application appkey
-    notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+    notify: true # mail notifier , https://github.com/xCss/Valine/wiki
     verify: true # Verification code
     placeholder: feel free # comment box placeholder
-    avatar: # gravatar style
+    avatar: identicon # gravatar style
     meta: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
     visitor: true # Article reading statistic https://valine.js.org/visitor.html
@@ -163,10 +163,10 @@ comment:
   # https://api.douban.com/v2/movie/subject/:id 单个电影信息
   # https://api.douban.com/v2/movie/search?q={text} 电影搜索
 douban:
-  user: # 豆瓣用户名
+  user: Longhua # 豆瓣用户名
   start: 0 # 从哪一条记录开始
   count: 100 # 获取豆瓣书单数据条数
-  apikey: # 豆瓣apikey
+#   apikey: # 豆瓣apikey
   
 # PV
 pv:
@@ -203,16 +203,17 @@ profile:
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
   author: 徐龙华
-  author_title: programmer
-  author_description: #个人简介。
-  location: Shanghai, China
+  author_title: 程序员
+  author_description: 热爱生活 #个人简介。
+  location: 中国 上海
   follow: https://github.com/HelloLong
   # Social Links
   social:
     links:
-      # github: https://github.com/cofess
+      github: https://github.com/HelloLong
+      gitee: https://gitee.com/longhuax
       # weibo: http://weibo.com/cofess
-      # twitter: https://twitter.com/iwebued
+      twitter: https://twitter.com/longhua03436236
       # facebook: /
       # dribbble: /
       # behance: https://www.behance.net/cofess
@@ -220,33 +221,29 @@ profile:
     link_tooltip: true # enable the social link tooltip, options: true, false
   # My Skills 
   skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
+    Java: ★★★★☆
+    C#: ★★★★☆
     Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
-    平面设计: ★★★☆☆
+    Python: ★★★☆☆
   # My Personal Links
   links:
-    # Github: https://github.com/cofess
-    # Blog: http://blog.cofess.com
+    github: https://github.com/HelloLong
+    gitee: https://gitee.com/longhuax
+    leetcode: https://leetcode.cn/u/xulonghua
     # 微博: http://weibo.com/cofess
     # 花瓣: http://huaban.com/cofess
     # Behance: https://www.behance.net/cofess
   # My Personal Labels
   labels:
-    - 前端
-    - 前端开发
-    - 前端重构
-    - Web前端
-    - 网页重构
+    - 程序员
+    - Java
+    - 系统架构
   # My Personal Works
-  works:
-    name:
-      link: http://www.example.com
-      date: 2016
+  # works:
+  #   name:
+  #     link: http://www.example.com
+  #     date: 2016
   # My Personal Projects
-  projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+  # projects:
+  #   cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
+  #   cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
