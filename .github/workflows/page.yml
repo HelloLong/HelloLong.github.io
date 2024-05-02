@@ -40,6 +40,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read     # to download an artifact uploaded by `actions/upload-pages-artifact@v3`
     environment:
       name: github-pages
       url: https://xulonghua.com/
