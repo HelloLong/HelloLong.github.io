@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xulonghua.com/links/index.html</loc>
+    
+    <lastmod>2024-05-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xulonghua.com/2024/04/30/test00/</loc>
+    
+    <lastmod>2024-05-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xulonghua.com/2024/04/30/Share-some-pitfalls-I-encountered-when-deploying-Hexo-in-githubpages/</loc>
     
     <lastmod>2024-04-30</lastmod>
@@ -11,9 +29,45 @@
   </url>
   
   <url>
-    <loc>https://xulonghua.com/2024/04/30/test00/</loc>
+    <loc>https://xulonghua.com/404.html</loc>
     
-    <lastmod>2024-04-30</lastmod>
+    <lastmod>2023-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xulonghua.com/about/index.html</loc>
+    
+    <lastmod>2023-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xulonghua.com/categories/index.html</loc>
+    
+    <lastmod>2023-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xulonghua.com/repository/index.html</loc>
+    
+    <lastmod>2023-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xulonghua.com/tags/index.html</loc>
+    
+    <lastmod>2023-11-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +85,7 @@
 
   <url>
     <loc>https://xulonghua.com/</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2024-05-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
