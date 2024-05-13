@@ -1,5 +1,5 @@
 ---
-title: 《中央帝国的财政密码》读书笔记("The Financial secrete of the central empire" book note)
+title: 《中央帝国的财政密码》读书笔记 "The Financial secrete of the central empire" book note
 date: 2024-05-08 18:36:25
 categories: [人文社科]
 tags: [历史, 中国历史, 读书笔记, history, chinahistory, booknote]

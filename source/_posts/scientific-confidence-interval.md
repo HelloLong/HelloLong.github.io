@@ -121,5 +121,5 @@ Low reproducibility. Many experiments in psychology and medicine cannot be repli
 The biggest advantage is explanatory power, while the biggest drawback is weak predictive ability. The core of economics lies in assumptions. Economics is overly mathematized. The essence of science lies in empiricism, not mathematical models.
 
 
-References
+## References
 https://www.bilibili.com/video/BV1Cv4y1n74H/?spm_id_from=333.337.search-card.all.click&vd_source=0a2a7bbb315efb16fa0d35b69437bbbb
