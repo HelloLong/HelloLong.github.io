@@ -18,7 +18,7 @@ tags: [科普, 数学, 概率, sciencePopularization, math, probability]
 ## Conditional Probability
 
 ## Bayesianism
-
+We need to accept that uncertainty is the norm in the world. Human beings are often inclined to ignore randomness and try to derive patterns from disparate random events, such as lottery numbers and fortune-telling. Bayesian thinking is dynamic, constantly adjusting our initial beliefs through the accumulation of information. It is a way to tackle inverse probabilities, allowing us to make inferences about the future based on observed data. Bayesian thinking is also a philosophy that urges us not to jump to conclusions prematurely. Making premature judgments implies that our prior probabilities are fixed at either 0 or 1 and cannot be updated.
 ## References
 [底层逻辑2 理解商业世界的本质](https://weread.qq.com/web/reader/0b0322e0813ab7435g0197d8?)
 [以贝叶斯思维看待世界](https://mp.weixin.qq.com/s/YwUKNnvPaabcT_uLbQKQag)
