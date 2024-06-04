@@ -25,9 +25,6 @@ tags:
 
 
 # References
-拖延症如何干废现实自己?自我整合度高的人不会焦虑抑郁拖延【脑科学】
-https://www.bilibili.com/video/BV13U411F7FY/?buvid=Y54C345216215177409EA1EA7CC60A3B7AC6&is_story_h5=false&mid=KOjn0zDYQTWDC6NFbAhN1Q%3D%3D&p=1&plat_id=116&share_from=ugc&share_plat=ios&share_tag=s_i&unique_k=lUdEvd6&up_id=1033890839&vd_source=0a2a7bbb315efb16fa0d35b69437bbbb
-The anxiety-specific hippocampus–prefrontal cortex pathways links to procrastination through self-control
-https://onlinelibrary.wiley.com/doi/10.1002/hbm.25754
-The stranger within: Connecting with our future selves
-https://newsroom.ucla.edu/stories/the-stranger-within-connecting-with-our-future-selves
+[拖延症如何干废现实自己?自我整合度高的人不会焦虑抑郁拖延【脑科学】](https://www.bilibili.com/video/BV13U411F7FY/?buvid=Y54C345216215177409EA1EA7CC60A3B7AC6&is_story_h5=false&mid=KOjn0zDYQTWDC6NFbAhN1Q%3D%3D&p=1&plat_id=116&share_from=ugc&share_plat=ios&share_tag=s_i&unique_k=lUdEvd6&up_id=1033890839&vd_source=0a2a7bbb315efb16fa0d35b69437bbbb)
+[The anxiety-specific hippocampus–prefrontal cortex pathways links to procrastination through self-control](https://onlinelibrary.wiley.com/doi/10.1002/hbm.25754)
+[The stranger within: Connecting with our future selves](https://newsroom.ucla.edu/stories/the-stranger-within-connecting-with-our-future-selves)
