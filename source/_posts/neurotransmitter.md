@@ -2,7 +2,7 @@
 title: 神经递质 neurotransmitter
 date: 2024-08-21 10:57:55
 categories: [科普]
-tags: [科普, 学习, 多巴胺, sciencePopularization, math, dopamine]
+tags: [科普, 学习, 多巴胺, 精力管理, sciencePopularization, math, dopamine]
 ---
 # 多巴胺
 多巴胺是人脑的奖赏机制。当我们取得成绩就会分泌多巴胺，多巴胺会让人获得的快感，快感会驱使人去获得更大的成就。多巴胺是欲望的来源，也是行为的内在动力。
