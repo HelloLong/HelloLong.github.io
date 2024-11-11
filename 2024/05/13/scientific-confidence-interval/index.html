@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>科学的置信区间 scientific confidence interval | 徐龙华</title>
+  <meta name="description" content="科学哲学发展过程1 逻辑实证主义任何不可验证的陈述都既非真，也非假，而是没有实在意义。2 证伪主义证伪主义认为，科学之所以是科学，并不在于它的可证实性，而在于它的可证伪性。换句话说，科学理论应该能够受到经验的检验，能够在发展中发现错误并修正自己，以便过渡到更优的理论。3 范式转换范式转换通常发生在现有范式所带来的不一致和无法解决的难题不断累积，最终到达崩溃的边缘。这时，新的范式取代了旧的范式，导致">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科学的置信区间 scientific confidence interval">
+<meta property="og:url" content="https://xulonghua.com/2024/05/13/scientific-confidence-interval/index.html">
+<meta property="og:site_name" content="Hello xulonghua">
+<meta property="og:description" content="科学哲学发展过程1 逻辑实证主义任何不可验证的陈述都既非真，也非假，而是没有实在意义。2 证伪主义证伪主义认为，科学之所以是科学，并不在于它的可证实性，而在于它的可证伪性。换句话说，科学理论应该能够受到经验的检验，能够在发展中发现错误并修正自己，以便过渡到更优的理论。3 范式转换范式转换通常发生在现有范式所带来的不一致和无法解决的难题不断累积，最终到达崩溃的边缘。这时，新的范式取代了旧的范式，导致">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-13T08:59:57.000Z">
+<meta property="article:modified_time" content="2024-05-13T15:30:03.052Z">
+<meta property="article:author" content="xulonghua">
+<meta property="article:tag" content="科普">
+<meta property="article:tag" content="sciencePopularization">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://xulonghua.com/2024/05/13/scientific-confidence-interval/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hello xulonghua" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <!-- <a id="avatar" href="https://github.com/HelloLong" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a> -->
+        <a id="avatar">
+          <img class="img-circle" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">徐龙华</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">程序员</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国 上海</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/HelloLong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/longhuax" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://twitter.com/longhua03436236" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.douban.com/people/184654346" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="icon icon-douban"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E6%96%87%E7%A4%BE%E7%A7%91/">人文社科</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A4%E7%9F%A5/">认知</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/booknote/" rel="tag">booknote</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chinahistory/" rel="tag">chinahistory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cognition/" rel="tag">cognition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dopamine/" rel="tag">dopamine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/probability/" rel="tag">probability</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/program/" rel="tag">program</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmer/" rel="tag">programmer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/psychology/" rel="tag">psychology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sciencePopularization/" rel="tag">sciencePopularization</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistics/" rel="tag">statistics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wealth/" rel="tag">wealth</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/workplace/" rel="tag">workplace</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2/" rel="tag">中国历史</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%86%E5%8F%B2/" rel="tag">历史</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E5%B7%B4%E8%83%BA/" rel="tag">多巴胺</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E7%8E%87/" rel="tag">概率</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E6%99%AE/" rel="tag">科普</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" rel="tag">程序员</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%A1%E7%90%86/" rel="tag">管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86/" rel="tag">精力管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1/" rel="tag">统计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%81%8C%E5%9C%BA/" rel="tag">职场</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A4%E7%9F%A5/" rel="tag">认知</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A2%E5%AF%8C/" rel="tag">财富</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/booknote/" style="font-size: 13.33px;">booknote</a> <a href="/tags/chinahistory/" style="font-size: 13px;">chinahistory</a> <a href="/tags/cognition/" style="font-size: 13px;">cognition</a> <a href="/tags/dopamine/" style="font-size: 13px;">dopamine</a> <a href="/tags/history/" style="font-size: 13px;">history</a> <a href="/tags/management/" style="font-size: 13px;">management</a> <a href="/tags/math/" style="font-size: 13.67px;">math</a> <a href="/tags/probability/" style="font-size: 13px;">probability</a> <a href="/tags/program/" style="font-size: 13px;">program</a> <a href="/tags/programmer/" style="font-size: 13px;">programmer</a> <a href="/tags/psychology/" style="font-size: 13px;">psychology</a> <a href="/tags/sciencePopularization/" style="font-size: 14px;">sciencePopularization</a> <a href="/tags/statistics/" style="font-size: 13px;">statistics</a> <a href="/tags/wealth/" style="font-size: 13px;">wealth</a> <a href="/tags/workplace/" style="font-size: 13px;">workplace</a> <a href="/tags/%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2/" style="font-size: 13px;">中国历史</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 13px;">历史</a> <a href="/tags/%E5%A4%9A%E5%B7%B4%E8%83%BA/" style="font-size: 13px;">多巴胺</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">学习</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 13px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 13.33px;">数学</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 13px;">概率</a> <a href="/tags/%E7%A7%91%E6%99%AE/" style="font-size: 14px;">科普</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" style="font-size: 13px;">程序员</a> <a href="/tags/%E7%AE%A1%E7%90%86/" style="font-size: 13px;">管理</a> <a href="/tags/%E7%B2%BE%E5%8A%9B%E7%AE%A1%E7%90%86/" style="font-size: 13px;">精力管理</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 13px;">统计</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 13px;">编程</a> <a href="/tags/%E8%81%8C%E5%9C%BA/" style="font-size: 13px;">职场</a> <a href="/tags/%E8%AE%A4%E7%9F%A5/" style="font-size: 13px;">认知</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">读书笔记</a> <a href="/tags/%E8%B4%A2%E5%AF%8C/" style="font-size: 13px;">财富</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/11/10/time-as-a-friend-note/" class="title">time-as-a-friend-note</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-11-10T15:29:33.000Z" itemprop="datePublished">2024-11-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/08/21/neurotransmitter/" class="title">神经递质 neurotransmitter</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-08-21T02:57:55.000Z" itemprop="datePublished">2024-08-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/06/04/procrastination-and-self-control/" class="title">procrastination and self-control 拖延与自律</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-06-04T08:01:40.000Z" itemprop="datePublished">2024-06-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A4%E7%9F%A5/">认知</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/05/28/the-truth-about-wealth/" class="title">《财富的真相》读书笔记 &#34;the truth about wealth&#34; book note</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-05-28T08:28:52.000Z" itemprop="datePublished">2024-05-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/05/20/math-and-program/" class="title">数学与编程 math and program</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-05-20T06:30:26.000Z" itemprop="datePublished">2024-05-20</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-scientific-confidence-interval" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      科学的置信区间 scientific confidence interval
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/05/13/scientific-confidence-interval/" class="article-date">
+	  <time datetime="2024-05-13T08:59:57.000Z" itemprop="datePublished">2024-05-13</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/sciencePopularization/" rel="tag">sciencePopularization</a>, <a class="article-tag-link-link" href="/tags/%E7%A7%91%E6%99%AE/" rel="tag">科普</a>
+  </span>
+
+
+        
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2024/05/13/scientific-confidence-interval/" class="leancloud_visitors"  data-flag-title="科学的置信区间 scientific confidence interval">
+			<span class="leancloud-visitors-count">0</span>
+		</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/05/13/scientific-confidence-interval/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="科学哲学发展过程"><a href="#科学哲学发展过程" class="headerlink" title="科学哲学发展过程"></a>科学哲学发展过程</h2><p>1 逻辑实证主义<br>任何不可验证的陈述都既非真，也非假，而是没有实在意义。<br>2 证伪主义<br>证伪主义认为，科学之所以是科学，并不在于它的可证实性，而在于它的可证伪性。换句话说，科学理论应该能够受到经验的检验，能够在发展中发现错误并修正自己，以便过渡到更优的理论。<br>3 范式转换<br>范式转换通常发生在现有范式所带来的不一致和无法解决的难题不断累积，最终到达崩溃的边缘。这时，新的范式取代了旧的范式，导致一场“革命性科学”的出现。在这个时期，新的视角被打开，新的探索路径出现，并对旧的数据和假设提出新的问题。<br>4 贝叶斯主义<br>所有的信念都有一个置信度百分比。</p>
+<h2 id="贝叶斯主义"><a href="#贝叶斯主义" class="headerlink" title="贝叶斯主义"></a>贝叶斯主义</h2><h4 id="贝叶斯主义原则"><a href="#贝叶斯主义原则" class="headerlink" title="贝叶斯主义原则"></a>贝叶斯主义原则</h4><ul>
+<li>所有的信念都有一个置信度百分比。</li>
+<li>新的实验证据出现后，根据贝叶斯公式，更新这个置信度。 置信度可以升高也可能降低。</li>
+<li>对于同一个理论每个人的置信度可以不一样。不论初始置信度是多少，只要不断使用“新证据”去修正，最后大部分人的置信度会趋于一致。</li>
+</ul>
+<h4 id="贝叶斯主义计算方式"><a href="#贝叶斯主义计算方式" class="headerlink" title="贝叶斯主义计算方式"></a>贝叶斯主义计算方式</h4><p>P(A|B) &#x3D; P(B|A) &#x2F; P(B) * P (A)<br>P(A|B): 新的置信度<br>P(B|A) &#x2F; P(B): 似然度<br>P(A): 原来置信度</p>
+<h4 id="贝叶斯主义底层逻辑"><a href="#贝叶斯主义底层逻辑" class="headerlink" title="贝叶斯主义底层逻辑"></a>贝叶斯主义底层逻辑</h4><p>由实验结果去反向推测理论原因成立的概率，反向破解宇宙游戏。</p>
+<h4 id="贝叶斯主义缺陷"><a href="#贝叶斯主义缺陷" class="headerlink" title="贝叶斯主义缺陷"></a>贝叶斯主义缺陷</h4><ul>
+<li>初始置信度不好确认</li>
+<li>每个人的置信度不一样</li>
+</ul>
+<h4 id="贝叶斯主义解决的两个问题"><a href="#贝叶斯主义解决的两个问题" class="headerlink" title="贝叶斯主义解决的两个问题"></a>贝叶斯主义解决的两个问题</h4><p>一、休谟问题<br>我们无从得知因果之间的关系，只能得知某些事物总是会连结在一起。<br>人类无法发现100%成立的因果性，只能发现概率相关性。<br>二、奥卡姆剃刀原理<br>如果关于同一个问题有多种理论，每一种理论都能作出同样准确的预言，那么应该挑选假设数目最少的那个。<br>如无必要，勿增实体。<br>奥卡姆剃刀的问题是不是所有问题都是假设越少越好，如不能用上帝设计来做假设。<br>贝叶斯主义的解决方案，不仅关心假设的个数，还需关心每个假设的置信度。</p>
+<h2 id="不同学科的缺陷"><a href="#不同学科的缺陷" class="headerlink" title="不同学科的缺陷"></a>不同学科的缺陷</h2><p>每个学科由于自身条件限制，得出的目前为止最靠谱的理论，置信度越低的学科发展潜力越大。</p>
+<h4 id="数学-99"><a href="#数学-99" class="headerlink" title="数学 99%"></a>数学 99%</h4><p>数学 &#x3D; 公理 + 符号 + 逻辑。问题最大的是公理，公理是一切数学的基础。公理 &#x3D; 常识 + 直觉。数学的正确性等价于公理的正确性。公理无法保证百分百正确性。比如，真实的宇宙是不连续的；排中律有可能不对，即一个问题要么是真要么是假。</p>
+<h4 id="物理学-95"><a href="#物理学-95" class="headerlink" title="物理学 95%"></a>物理学 95%</h4><p>一、所有的物理理论都有一定的适用范围。例如：广义相对论会在黑洞里面失效；宇宙膨胀会破坏时间的平移对称性，宇宙膨胀过程中能量不守恒。<br>二、一些物理理论在数学上不严谨。数学在乎理论是否逻辑自洽，物理在乎理论是否与实验相符。例如：无法在数学上严格证明杨-米尔斯场的质量间隙是否存在。<br>三、一些物理学分支有比较大的误差。例如：热力学和凝聚态物理误差比较大。</p>
+<h4 id="进化论-80"><a href="#进化论-80" class="headerlink" title="进化论 80%"></a>进化论 80%</h4><p>进化论里面不同的理论有不同的置信度。有些依赖化石推断的置信度不高。<br>最大的缺陷是进化的细节不完善。</p>
+<h4 id="天文-80"><a href="#天文-80" class="headerlink" title="天文 80%"></a>天文 80%</h4><p>大量的近似计算，整体误差比较大，大多数只能到数量级精度。</p>
+<h4 id="心理学与医学-50"><a href="#心理学与医学-50" class="headerlink" title="心理学与医学 50%"></a>心理学与医学 50%</h4><p>可重复不高。大量论文里面的实验无法重复做。原因是心理学和医学一致使用统计显著性 P&lt;0.05的标准，当P&#x3D;0.05时，出错概率大概是23%~30%。</p>
+<h4 id="经济学-40"><a href="#经济学-40" class="headerlink" title="经济学 40%"></a>经济学 40%</h4><p>最大的有优点是解释能力强，最大的缺点是预测能力弱。经济学的核心是假设。<br>经济学过度数学化。科学的核心是实证，不是数学模型。</p>
+<h2 id="Development-of-the-Philosophy-of-Science"><a href="#Development-of-the-Philosophy-of-Science" class="headerlink" title="Development of the Philosophy of Science"></a>Development of the Philosophy of Science</h2><ol>
+<li>Logical Positivism<br>Any statement that cannot be verified is neither true nor false but lacks meaning.</li>
+<li>Falsificationism<br>Falsificationism holds that the essence of science lies not in its verifiability but in its falsifiability. In other words, scientific theories should be subject to empirical testing, capable of identifying errors, and open to self-correction for the advancement towards better theories.</li>
+<li>Paradigm Shift<br>Paradigm shifts typically occur when accumulated inconsistencies and unresolved problems within existing paradigms reach a critical point. This leads to the emergence of a “revolutionary science” where new perspectives are opened, new paths of exploration appear, and new questions are posed to existing data and assumptions.</li>
+<li>Bayesianism<br>All beliefs have a degree of confidence or probability.</li>
+</ol>
+<h2 id="Bayesianism"><a href="#Bayesianism" class="headerlink" title="Bayesianism"></a>Bayesianism</h2><h4 id="Principles-of-Bayesianism"><a href="#Principles-of-Bayesianism" class="headerlink" title="Principles of Bayesianism"></a>Principles of Bayesianism</h4><ul>
+<li>All beliefs have a degree of confidence or probability.</li>
+<li>After new empirical evidence emerges, update the degree of confidence using Bayes’ formula. The degree of confidence may increase or decrease.</li>
+<li>Different individuals may have different degrees of confidence in the same theory. As long as the “new evidence” is continuously used for revision, the degrees of confidence among most individuals will eventually converge.</li>
+</ul>
+<h4 id="Calculation-in-Bayesianism"><a href="#Calculation-in-Bayesianism" class="headerlink" title="Calculation in Bayesianism"></a>Calculation in Bayesianism</h4><p>P(A|B) &#x3D; P(B|A) &#x2F; P(B) * P(A)<br>P(A|B): New degree of confidence<br>P(B|A) &#x2F; P(B): Likelihood<br>P(A): Initial degree of confidence</p>
+<h4 id="Underlying-Logic-of-Bayesianism"><a href="#Underlying-Logic-of-Bayesianism" class="headerlink" title="Underlying Logic of Bayesianism"></a>Underlying Logic of Bayesianism</h4><p>Inferring the probability of the theory’s validity based on experimental results, reverse-engineering the game of the universe.</p>
+<h4 id="Limitations-of-Bayesianism"><a href="#Limitations-of-Bayesianism" class="headerlink" title="Limitations of Bayesianism"></a>Limitations of Bayesianism</h4><ul>
+<li>Difficulty in determining the initial degree of confidence</li>
+<li>Different degrees of confidence among individuals</li>
+</ul>
+<h4 id="Two-Problems-Addressed-by-Bayesianism"><a href="#Two-Problems-Addressed-by-Bayesianism" class="headerlink" title="Two Problems Addressed by Bayesianism"></a>Two Problems Addressed by Bayesianism</h4><ol>
+<li>The Hume’s problem: Humans cannot know causal relationships; they can only observe certain things consistently connected.<br>Humans cannot discover causality with 100% certainty; they can only observe probabilistic correlations.</li>
+<li>Occam’s Razor principle: If multiple theories make equally accurate predictions about the same problem, select the one with the fewest assumptions.<br>Like with Ockham’s Razor, not all problems are best approached with minimal assumptions, such as the assumption of a designer God. Bayesianism considers both the number of assumptions and the degree of confidence in each assumption.</li>
+</ol>
+<h2 id="Limitations-of-Different-Disciplines"><a href="#Limitations-of-Different-Disciplines" class="headerlink" title="Limitations of Different Disciplines"></a>Limitations of Different Disciplines</h2><p>Each discipline has its limitations, and the higher the level of confidence, the greater the potential for development.</p>
+<h4 id="Mathematics-99"><a href="#Mathematics-99" class="headerlink" title="Mathematics (99%)"></a>Mathematics (99%)</h4><p>Mathematics &#x3D; Axioms + Symbols + Logic. The biggest problem lies in the axioms, which form the foundation of all mathematics. Axioms &#x3D; Common sense + intuition. The correctness of mathematics is equivalent to the correctness of axioms. Axioms cannot guarantee 100% correctness. For example, the real universe is discontinuous; the law of excluded middle may not hold, meaning a proposition can be neither true nor false.</p>
+<h4 id="Physics-95"><a href="#Physics-95" class="headerlink" title="Physics (95%)"></a>Physics (95%)</h4><ol>
+<li>All physical theories have certain applicability limits. For example, general relativity breaks down inside black holes. The expansion of the universe disrupts the translational symmetry of time, and energy is not conserved during the process of cosmic expansion.</li>
+<li>Some physical theories are mathematically imprecise. Mathematics cares about whether a theory is logically consistent, while physics cares about whether a theory aligns with experiments. For example, it is impossible to rigorously prove the existence of mass gaps in Yang-Mills fields.</li>
+<li>Some branches of physics have significant errors. For example, thermodynamics and condensed matter physics have relatively large errors.</li>
+</ol>
+<h4 id="Evolutionary-Theory-80"><a href="#Evolutionary-Theory-80" class="headerlink" title="Evolutionary Theory (80%)"></a>Evolutionary Theory (80%)</h4><p>Different theories within evolutionary theory have different degrees of confidence. Some inferences based on fossils have low confidence. The biggest flaw lies in the incomplete understanding of the details of evolution.</p>
+<h4 id="Astronomy-80"><a href="#Astronomy-80" class="headerlink" title="Astronomy (80%)"></a>Astronomy (80%)</h4><p>Extensive use of approximations, overall errors are relatively large, and most calculations can only achieve order-of-magnitude precision.</p>
+<h4 id="Psychology-and-Medicine-50"><a href="#Psychology-and-Medicine-50" class="headerlink" title="Psychology and Medicine (50%)"></a>Psychology and Medicine (50%)</h4><p>Low reproducibility. Many experiments in psychology and medicine cannot be replicated. The reason is that psychology and medicine consistently use the standard of statistical significance at P&lt;0.05, which means that when P&#x3D;0.05, the probability of error is around 23% to 30%.</p>
+<h4 id="Economics-40"><a href="#Economics-40" class="headerlink" title="Economics (40%)"></a>Economics (40%)</h4><p>The biggest advantage is explanatory power, while the biggest drawback is weak predictive ability. The core of economics lies in assumptions. Economics is overly mathematized. The essence of science lies in empiricism, not mathematical models.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cv4y1n74H/?spm_id_from=333.337.search-card.all.click&vd_source=0a2a7bbb315efb16fa0d35b69437bbbb">https://www.bilibili.com/video/BV1Cv4y1n74H/?spm_id_from=333.337.search-card.all.click&amp;vd_source=0a2a7bbb315efb16fa0d35b69437bbbb</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://xulonghua.com/2024/05/13/scientific-confidence-interval/" title="科学的置信区间 scientific confidence interval" target="_blank" rel="external">https://xulonghua.com/2024/05/13/scientific-confidence-interval/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2024/05/13/common-statistical-fallacies/" title="常见的统计谬误 common statistical fallacies"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2024/05/10/KnowledgeIntoActionThePathToManagingTechnicalProfessionals/" title="《知行 技术人的管理之路》读书笔记 &#34;Knowledge Into Action The Path To Managing Technical Professionals&#34; book note"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/HelloLong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/longhuax" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://twitter.com/longhua03436236" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.douban.com/people/184654346" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="icon icon-douban"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	<!-- Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>. -->
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: true,
+    notify: true,
+    appId: 'xJqwvCmNRmtDojJGm7bQZHci-gzGzoHsz',
+    appKey: 'Bbo7KbWLb7z9GgnV1Jb5QmKa',
+    placeholder: 'feel free',
+    avatar: 'identicon',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
