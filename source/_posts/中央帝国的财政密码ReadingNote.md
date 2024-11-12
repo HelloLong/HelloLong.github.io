@@ -1,0 +1,10 @@
+---
+title: 《中央帝国的财政密码》读书笔记 "The Financial secrete of the central empire" book note
+date: 2024-05-08 18:36:25
+categories: [人文社科]
+tags: [历史, 中国历史, 读书笔记, history, chinahistory, booknote]
+---
+
+历史需要从三个维度看，财务、军事、统治哲学。和平时代看财务，战乱看军事，维稳靠思想控制。古今中外，对于一个集权的政府来说，最重要的有两件事情：一、建立官僚制度，控制社会；二、收税养活官僚体系。国有企业，土地共有，货币发行权是三大从民间抽税的方法。根据制度和财政可以将中国历史分为三个大的周期：一、秦汉到南朝，中央集权为主但残留诸侯制，经济上土地私有制，收取土地税，出现国有企业和金融垄断；二、北魏到唐宋，这个周期是较为完善的中央集权制和科举制，土地公有制；三、辽金到元到明清，形成稳定的模式，土地重回私有制，集权模式成熟，控制人们的求知欲。
+
+In times of peace, finances are paramount; during conflicts, military matters take precedence; and for maintaining stability, ideological control is relied upon. Throughout history, both domestically and internationally, for a centralized government, two things are most important: first, establishing a bureaucratic system to control society; second, collecting taxes to sustain the bureaucratic system. State-owned enterprises, communal land, and currency issuance constitute the three major methods of extracting taxes from the populace. Based on the system and finances, Chinese history can be divided into three major periods:  1. From the Qin and Han Dynasties to the Southern Dynasties, centralization was predominant but remnants of feudalism persisted. Economically, there was private land ownership, with land taxes being collected. State-owned enterprises and financial monopolies emerged during this period. 2. From the Northern Wei Dynasty to the Song Dynasty, this period saw a relatively perfected system of centralized authority and the imperial examination system, with public land ownership. 3. From the Liao and Jin Dynasties to the Yuan, Ming, and Qing Dynasties, a stable pattern emerged where land reverted to private ownership, the centralized authority model matured, and there was control over people's desire for knowledge.
